@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import com.provider.model.*;
-import com.students.model.*;
 import com.questions.model.*;
 
 public class QuestionDAO {
