@@ -48,20 +48,20 @@ li a:hover {
 <body>
 
 	<div class="container mt-5">
-		<h1 class="text-center text-primary">Student Login</h1>
+		<h1 class="text-center text-primary">STUDENT LOGIN</h1>
 
 		<!-- Display messages -->
 		<div class="text-center mt-3">
 			<font color="red"> <%
-                    if (request.getParameter("msg") != null) {
-                        out.print(request.getParameter("msg"));
-                    }
-                %>
+ if (request.getParameter("msg") != null) {
+ 	out.print(request.getParameter("msg"));
+ }
+ %>
 			</font> <font color="green"> <%
-                    if (request.getParameter("msg1") != null) {
-                        out.print(request.getParameter("msg1"));
-                    }
-                %>
+ if (request.getParameter("msg1") != null) {
+ 	out.print(request.getParameter("msg1"));
+ }
+ %>
 			</font>
 		</div>
 
@@ -77,7 +77,7 @@ li a:hover {
 					name="pass" id="pass" class="form-control" required>
 			</div>
 			<div class="text-center">
-				<button type="button" onclick="location.href='index.html'"
+				<button type="button" onclick="location.href='index.jsp'"
 					class="btn btn-outline-primary mr-3">Exit</button>
 				<button type="submit" class="btn btn-outline-primary">Login</button>
 			</div>

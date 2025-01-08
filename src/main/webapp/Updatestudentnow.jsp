@@ -12,19 +12,19 @@
 </head>
 <body>
 	<%
-    String newuserid = request.getParameter("uname");
-    String newpassword = request.getParameter("pass");
-    String newname = request.getParameter("name");
-    String originaluid = request.getParameter("usernameoriginal");
-    
-    int status = StudentsDAO.doUpdateNowRecord(originaluid, newuserid, newpassword, newname);
-    if (status > 0) { 
-        response.sendRedirect("StudentList.jsp");
-    } else if (status == -1) {
-        out.print("Error from database");
-    } else {
-        out.print("Exception occurred");
-    }
-%>
+	String newuserid = request.getParameter("uname");
+	String newpassword = request.getParameter("pass");
+	String newname = request.getParameter("name");
+	String originaluid = request.getParameter("usernameoriginal");
+
+	int status = StudentsDAO.doUpdateNowRecord(originaluid, newuserid, newpassword, newname);
+	if (status > 0) {
+		response.sendRedirect("StudentList.jsp");
+	} else if (status == -1) {
+		out.print("Error from database");
+	} else {
+		out.print("Exception occurred");
+	}
+	%>
 </body>
 </html>

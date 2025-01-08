@@ -17,7 +17,7 @@
 </head>
 <body>
 	<h2>
-		<font face="WildWest" color="blue">Enter Instruction Here</font>
+		<font face="WildWest" color="blue">ENTER INSTRUCTIONS</font>
 	</h2>
 	<form action="com.controller.InstructionInsert">
 		<pre>
@@ -29,21 +29,21 @@ Instruction    <input type="text" name="inst">
 				onclick="location.href='AdminPanel.jsp'" value="Home"
 				class="btn btn-outline-success">    
              <input type="button"
-				onclick="location.href='InstructionList.jsp'" value="Back"
+				onclick="location.href='InstructionsList.jsp'" value="Back"
 				class="btn btn-outline-danger">
         </pre>
 	</form>
 	<div>
 		<font color="red"> <%
-                if (request.getParameter("msg2") != null) {
-                    out.print(request.getParameter("msg2"));
-                }
-            %>
+ if (request.getParameter("msg2") != null) {
+ 	out.print(request.getParameter("msg2"));
+ }
+ %>
 		</font> <font color="green"> <%
-                if (request.getParameter("msg1") != null) {
-                    out.print(request.getParameter("msg1"));
-                }
-            %>
+ if (request.getParameter("msg1") != null) {
+ 	out.print(request.getParameter("msg1"));
+ }
+ %>
 		</font>
 	</div>
 </body>

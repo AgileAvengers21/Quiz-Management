@@ -11,28 +11,29 @@ import com.instructions.model.Instruction;
 
 @WebServlet("/com.controller.InstructionInsert")
 public class InstructionInsert extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public InstructionInsert() {
-        super();
-    }
+	public InstructionInsert() {
+		super();
+	}
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
-        response.setContentType("text/html");
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-        String instruction = request.getParameter("inst");
+		response.setContentType("text/html");
 
-        Instruction ist = new Instruction();
-        ist.setInstruction(instruction);
+		String instruction = request.getParameter("inst");
 
-        boolean status = InstructionDAO.insertInstruction(ist);
-        if (status) {
-            String msg1 = "Instruction Added";
-            response.sendRedirect("AddInstruction.jsp?msg1=" + msg1);
-        } else {
-            String msg2 = "Instruction not Added";
-            response.sendRedirect("AddInstruction.jsp?msg2=" + msg2);
-        }
-    }
+		Instruction ist = new Instruction();
+		ist.setInstruction(instruction);
+
+		boolean status = InstructionDAO.insertInstruction(ist);
+		if (status) {
+			String msg1 = "Instruction Added";
+			response.sendRedirect("AddInstruction.jsp?msg1=" + msg1);
+		} else {
+			String msg2 = "Instruction not Added";
+			response.sendRedirect("AddInstruction.jsp?msg2=" + msg2);
+		}
+	}
 }

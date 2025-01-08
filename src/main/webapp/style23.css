@@ -16,8 +16,10 @@
 	bottom: 100px;
 }
 
-.cc2, p {
-	background-color: rgb(0, 0, 0); /* Fallback color */
+.cc2,
+p {
+	background-color: rgb(0, 0, 0);
+	/* Fallback color */
 	background-color: rgba(0, 0, 0, 0.4);
 	font-size: 35px;
 	text-transform: uppercase;
@@ -26,8 +28,11 @@
 	font-family: 'Calistoga', cursive;
 }
 
-.cc1, h1, h5 {
-	background-color: rgb(0, 0, 0); /* Fallback color */
+.cc1,
+h1,
+h5 {
+	background-color: rgb(0, 0, 0);
+	/* Fallback color */
 	background-color: rgba(0, 0, 0, 0.4);
 	font-size: 45px;
 	text-transform: uppercase;
@@ -58,7 +63,8 @@
 	--speed: 1000ms;
 }
 
-html, body {
+html,
+body {
 	padding: 0;
 	margin: 0;
 	/* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
@@ -151,7 +157,10 @@ h2 {
 	background: var(--right-bg-color);
 }
 
-.split.left, .split.right, .split.right:before, .split.left:before {
+.split.left,
+.split.right,
+.split.right:before,
+.split.left:before {
 	transition: var(--speed) all ease-in-out;
 }
 
@@ -179,20 +188,22 @@ h2 {
 	z-index: 2;
 }
 
-@media ( max-width : 800px) {
+@media (max-width : 800px) {
 	h2 {
 		font-size: 2rem;
 	}
+
 	.button {
 		width: 12rem;
 	}
 }
 
-@media ( max-height : 700px) {
+@media (max-height : 700px) {
 	.button {
 		top: 70%;
 	}
 }
+
 /* for bottons */
 .a {
 	padding: 1px;
@@ -219,13 +230,21 @@ h2 {
 	animation: animate 8s linear infinite;
 }
 
-@keyframes animate {
-  0% {
-    background-position: 0;
-  }
-  100% {
-    background-position: 400%;
-  }
+@ keyframes animate {
+	0% {
+		background-position: 0;
+	}
+
+	100 % {
+		background-position:
+
+
+
+
+
+
+			400 %;
+	}
 }
 
 .a:before {

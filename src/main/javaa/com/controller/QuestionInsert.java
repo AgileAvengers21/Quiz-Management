@@ -11,39 +11,40 @@ import com.questions.model.Questions;
 
 @WebServlet("/com.controller.QuestionInsert")
 public class QuestionInsert extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public QuestionInsert() {
-        super();
-    }
+	public QuestionInsert() {
+		super();
+	}
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-     
-        response.setContentType("text/html");
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-        String question = request.getParameter("Question");
-        String a = request.getParameter("option1");
-        String b = request.getParameter("option2");
-        String c = request.getParameter("option3");
-        String d = request.getParameter("option4");
-        String answer = request.getParameter("answer");
+		response.setContentType("text/html");
 
-        Questions q = new Questions();
-        q.setA(a);
-        q.setB(b);
-        q.setC(c);
-        q.setD(d);
-        q.setAnswer(answer);
-        q.setQuestion(question);
+		String question = request.getParameter("Question");
+		String a = request.getParameter("a");
+		String b = request.getParameter("b");
+		String c = request.getParameter("c");
+		String d = request.getParameter("d");
+		String answer = request.getParameter("answer");
 
-        boolean status = QuestionDAO.insertQuestion(q);
+		Questions q = new Questions();
+		q.setA(a);
+		q.setB(b);
+		q.setC(c);
+		q.setD(d);
+		q.setAnswer(answer);
+		q.setQuestion(question);
 
-        if (status) {
-            String msg1 = "Question Added";
-            response.sendRedirect("AddQuestion.jsp?msg1=" + msg1);
-        } else {
-            String msg2 = "Question not Added";
-            response.sendRedirect("AddQuestion.jsp?msg2=" + msg2);
-        }
-    }
+		boolean status = QuestionDAO.insertQuestion(q);
+
+		if (status) {
+			String msg1 = "Question Added";
+			response.sendRedirect("AddQuestion.jsp?msg1=" + msg1);
+		} else {
+			String msg2 = "Question not Added";
+			response.sendRedirect("AddQuestion.jsp?msg2=" + msg2);
+		}
+	}
 }

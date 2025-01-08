@@ -22,14 +22,26 @@
 .centered {
 	text-align: center;
 }
+
+.heading {
+	color: blue;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 24px; /* Adjust the font size as needed */
+	font-weight: bold; /* Make the heading bold */
+	margin-bottom: 20px; /* Add spacing below the heading */
+	background-color: #f8f9fa; /* Light gray background color */
+	padding: 10px; /* Add padding for better spacing */
+	border-radius: 5px; /* Rounded corners for the background */
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	/* Subtle shadow for a modern look */
+}
 </style>
 </head>
 <body>
 	<div class="centered">
-		<h3>
-			<font color="blue">List of All Instructions</font>
-		</h3>
+		<h3 class="heading">LIST OF ALL INSTRUCTIONS</h3>
 	</div>
+
 	<table class="table table-bordered table-hover">
 		<thead class="table-dark">
 			<tr>
@@ -41,22 +53,22 @@
 		</thead>
 		<tbody>
 			<%
-                int i = 1; // Start counter from 1
-                ArrayList<Instruction> allinsts = InstructionDAO.getAllRecords();
-                for (Instruction e : allinsts) {
-                    String encodedInstruction = URLEncoder.encode(e.getInstruction(), "UTF-8");
-            %>
+			int i = 1; // Start counter from 1
+			ArrayList<Instruction> allinsts = InstructionDAO.getAllRecords();
+			for (Instruction e : allinsts) {
+				String encodedInstruction = URLEncoder.encode(e.getInstruction(), "UTF-8");
+			%>
 			<tr>
-				<td><%= i++ %></td>
-				<td><%= e.getInstruction() %></td>
+				<td><%=i++%></td>
+				<td><%=e.getInstruction()%></td>
 				<td><a
-					href="updateinstruction.jsp?inst=<%= encodedInstruction %>">Update</a></td>
+					href="Updateinstruction.jsp?inst=<%=encodedInstruction%>">Update</a></td>
 				<td><a
-					href="deleteinstruction.jsp?inst=<%= encodedInstruction %>">Delete</a></td>
+					href="Deleteinstruction.jsp?inst=<%=encodedInstruction%>">Delete</a></td>
 			</tr>
 			<%
-                }
-            %>
+			}
+			%>
 		</tbody>
 		<tfoot>
 			<tr>

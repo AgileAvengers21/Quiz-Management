@@ -18,7 +18,7 @@
 </head>
 <body>
 	<h2>
-		<font face="WildWest" color="blue">Enter Student Details</font>
+		<font face="WildWest" color="blue">ENTER STUDENT DETAILS</font>
 	</h2>
 	<form action="com.controller.StudentInsert">
 		<pre>
@@ -40,15 +40,15 @@ Password:     <input type="password" name="pass">
 	</form>
 	<div>
 		<font color="red"> <%
-                if (request.getParameter("msg2") != null) {
-                    out.print(request.getParameter("msg2"));
-                }
-            %>
+ if (request.getParameter("msg2") != null) {
+ 	out.print(request.getParameter("msg2"));
+ }
+ %>
 		</font> <font color="green"> <%
-                if (request.getParameter("msg1") != null) {
-                    out.print(request.getParameter("msg1"));
-                }
-            %>
+ if (request.getParameter("msg1") != null) {
+ 	out.print(request.getParameter("msg1"));
+ }
+ %>
 		</font>
 	</div>
 </body>

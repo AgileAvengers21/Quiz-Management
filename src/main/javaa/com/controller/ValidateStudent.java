@@ -12,34 +12,35 @@ import com.students.model.Students;
 
 @WebServlet("/com.controller.ValidateStudent")
 public class ValidateStudent extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public ValidateStudent() {
-        super();
-    }
+	public ValidateStudent() {
+		super();
+	}
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    
-        response.setContentType("text/html");
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-        String username = request.getParameter("uname");
-        String password = request.getParameter("pass");
+		response.setContentType("text/html");
 
-        Students sd = new Students();
-        sd.setUsername(username);
-        sd.setPassword(password);
+		String username = request.getParameter("uname");
+		String password = request.getParameter("pass");
 
-        boolean status = StudentsDAO.doValidate(sd);
+		Students sd = new Students();
+		sd.setUsername(username);
+		sd.setPassword(password);
 
-        if (status) {
-            // Logged in as student, do something (pending)
-            HttpSession studentsession = request.getSession();
-            studentsession.setAttribute("username", sd.getUsername());
-            studentsession.setAttribute("name", sd.getName());
-            response.sendRedirect("StudentInstructions.jsp");
-        } else {
-            String msg = "Invalid Username or Password";
-            response.sendRedirect("StudentLogin.jsp?msg=" + msg);
-        }
-    }
+		boolean status = StudentsDAO.doValidate(sd);
+
+		if (status) {
+			// Logged in as student, do something (pending)
+			HttpSession studentsession = request.getSession();
+			studentsession.setAttribute("username", sd.getUsername());
+			studentsession.setAttribute("name", sd.getName());
+			response.sendRedirect("StudentInstructions.jsp");
+		} else {
+			String msg = "Invalid Username or Password";
+			response.sendRedirect("StudentLogin.jsp?msg=" + msg);
+		}
+	}
 }

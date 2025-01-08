@@ -24,19 +24,19 @@
 </head>
 <body>
 	<h2>
-		<font face="WildWest" color="blue">Enter Questions Here</font>
+		<font face="WildWest" color="blue">ENTER QUESTIONS</font>
 	</h2>
 	<form action="com.controller.QuestionInsert">
 		<pre>
 Question:    <input type="text" name="Question">
 
-Option A:     <input type="text" name="option1">
+Option A:     <input type="text" name="a">
 
-Option B:     <input type="text" name="option2">
+Option B:     <input type="text" name="b">
 
-Option C:     <input type="text" name="option3">
+Option C:     <input type="text" name="c">
 
-Option D:     <input type="text" name="option4">
+Option D:     <input type="text" name="d">
 
 Answer:      <select name="answer">
              <option value="a">a</option>
@@ -57,15 +57,15 @@ Answer:      <select name="answer">
 	</form>
 	<div>
 		<font color="red"> <%
-                if (request.getParameter("msg2") != null) {
-                    out.print(request.getParameter("msg2"));
-                }
-            %>
+ if (request.getParameter("msg2") != null) {
+ 	out.print(request.getParameter("msg2"));
+ }
+ %>
 		</font> <font color="green"> <%
-                if (request.getParameter("msg1") != null) {
-                    out.print(request.getParameter("msg1"));
-                }
-            %>
+ if (request.getParameter("msg1") != null) {
+ 	out.print(request.getParameter("msg1"));
+ }
+ %>
 		</font>
 	</div>
 </body>

@@ -29,45 +29,48 @@
 <body>
 
 	<%
-    // Fetch the student's name from the database
-    String name = StudentsDAO.getStudentName(session.getAttribute("username").toString());
-%>
+	// Fetch the student's name from the database
+	String name = StudentsDAO.getStudentName(session.getAttribute("username").toString());
+	%>
 
 	<!-- Welcome Banner -->
-	<div style="background-color: yellow; padding: 20px;"
+	<div
+		style="background-color: #87ceeb; padding: 20px; border-radius: 10px;"
 		class="text-center">
-		<h2 class="text-success">
-			Welcome,
-			<%= name %>!
+		<h2
+			style="font-family: 'Times New Roman', serif; color: #00008b; margin: 0;">
+			WELCOME,
+			<%=name%>!
 		</h2>
 	</div>
+
 
 	<!-- Instructions Section -->
 	<div class="container mt-4">
 		<div class="text-center mb-4">
-			<h4 class="text-danger">Instructions for Students</h4>
+			<h4 class="text-danger">INSTRUCTIONS FOR STUDENTS</h4>
 		</div>
 		<table class="table table-hover">
 			<thead class="thead-light">
 				<tr>
 					<th>#</th>
-					<th>Instruction</th>
+					<th>IINSTRUCTIONS</th>
 				</tr>
 			</thead>
 			<tbody>
 				<%
-                // Fetch all instructions from the database
-                int i = 1;
-                ArrayList<Instruction> allinsts = InstructionDAO.getAllRecords();
-                for (Instruction e : allinsts) {
-            %>
+				// Fetch all instructions from the database
+				int i = 1;
+				ArrayList<Instruction> allinsts = InstructionDAO.getAllRecords();
+				for (Instruction e : allinsts) {
+				%>
 				<tr>
-					<td><%= i++ %></td>
-					<td><%= e.getInstruction() %></td>
+					<td><%=i++%></td>
+					<td><%=e.getInstruction()%></td>
 				</tr>
 				<%
-                }
-            %>
+				}
+				%>
 			</tbody>
 		</table>
 	</div>
@@ -78,7 +81,7 @@
 			onclick="location.href='com.controller.LogoutStudent'">
 			Logout</button>
 		<button type="button" class="btn btn-outline-primary btn-lg"
-			onclick="location.href='Exam.jsp'">Start Test</button>
+			onclick="location.href='Exam.jsp'">START QUIZ</button>
 	</div>
 
 </body>

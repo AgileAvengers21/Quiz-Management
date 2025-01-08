@@ -5,16 +5,16 @@
 <%@ page import="com.students.dao.StudentsDAO"%>
 <%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Student List</title>
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-
 	<!-- Bootstrap JS and dependencies -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script
@@ -25,7 +25,7 @@
 	<!-- Header -->
 	<div class="container mt-4">
 		<div class="text-center">
-			<h3 class="text-primary">List of All Students</h3>
+			<h3 class="text-primary">LIST OF ALL STUDENTS</h3>
 		</div>
 
 		<!-- Student Table -->
@@ -42,25 +42,34 @@
 			</thead>
 			<tbody>
 				<%
-                int i = 1;
-                ArrayList<Students> allstudents = StudentsDAO.getAllRecords();
-                for (Students e : allstudents) {
-            %>
+				int i = 1;
+				ArrayList<Students> allstudents = StudentsDAO.getAllRecords();
+				if (allstudents != null && !allstudents.isEmpty()) {
+					for (Students student : allstudents) {
+				%>
 				<tr>
-					<td><%= i++ %></td>
-					<td><%= e.getUsername() %></td>
-					<td><%= e.getName() %></td>
-					<td><%= e.getPassword() %></td>
+					<td><%=i++%></td>
+					<td><%=student.getUsername()%></td>
+					<td><%=student.getName()%></td>
+					<td><%=student.getPassword()%></td>
 					<td><a
-						href="updatestudent.jsp?username=<%= e.getUsername() %>"
-						class="btn btn-outline-primary btn-sm"> Update </a></td>
+						href="Updatestudent.jsp?username=<%=student.getUsername()%>"
+						class="btn btn-outline-primary btn-sm">Update</a></td>
 					<td><a
-						href="deletestudent.jsp?username=<%= e.getUsername() %>"
-						class="btn btn-outline-danger btn-sm"> Delete </a></td>
+						href="Deletestudent.jsp?username=<%=student.getUsername()%>"
+						class="btn btn-outline-danger btn-sm">Delete</a></td>
 				</tr>
 				<%
-                }
-            %>
+				}
+				} else {
+				%>
+				<tr>
+					<td colspan="6" class="text-center text-muted">No students
+						found.</td>
+				</tr>
+				<%
+				}
+				%>
 			</tbody>
 			<tfoot>
 				<tr>
@@ -76,6 +85,5 @@
 			</tfoot>
 		</table>
 	</div>
-
 </body>
 </html>

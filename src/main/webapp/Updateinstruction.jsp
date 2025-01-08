@@ -45,13 +45,13 @@
 	<!-- Instructions Section -->
 	<div class="container mt-4">
 		<div class="text-center mb-4">
-			<h4 class="text-danger">Instructions for Students</h4>
+			<h4 class="text-danger">INSTRUCTIONS FOR STUDENTS</h4>
 		</div>
 		<table class="table table-hover">
 			<thead class="thead-light">
 				<tr>
 					<th>#</th>
-					<th>Instruction</th>
+					<th>INSTRUCTION</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -75,10 +75,10 @@
 	<!-- Buttons -->
 	<div class="text-center mt-4">
 		<button type="button" class="btn btn-outline-primary btn-lg"
-			onclick="location.href='oes.controller.LogoutStudent'">
+			onclick="location.href='com.controller.LogoutStudent'">
 			Logout</button>
 		<button type="button" class="btn btn-outline-primary btn-lg"
-			onclick="location.href='Exam.jsp'">Start Test</button>
+			onclick="location.href='Exam.jsp'">START QUIZ</button>
 	</div>
 
 </body>
